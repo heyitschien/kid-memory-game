@@ -52,7 +52,7 @@ const CardFront = styled(CardFace)`
   
   &::after {
     content: '';
-    background-image: url('/images/card_back.png');
+    background-image: url('/images/card_back_dog.png');
     background-size: cover;
     background-position: center;
     width: 100%;
