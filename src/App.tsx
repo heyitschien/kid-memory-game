@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import './App.css';
 import GameBoard from './components/GameBoard';
 import ScoreBoard from './components/ScoreBoard';
+import { playSound, SOUNDS } from './utils/sounds';
 
 // Define card interface
 interface CardType {
@@ -10,6 +11,7 @@ interface CardType {
   imageUrl: string;
   isFlipped: boolean;
   isMatched: boolean;
+  justMatched?: boolean;
 }
 
 const AppContainer = styled.div`
@@ -267,6 +269,14 @@ function App() {
         // It's a match!
         newCards[firstIndex].isMatched = true;
         newCards[secondIndex].isMatched = true;
+        
+        // Add justMatched flag for animation
+        newCards[firstIndex].justMatched = true;
+        newCards[secondIndex].justMatched = true;
+        
+        // Play match sound effect
+        playSound(SOUNDS.MATCH);
+        
         setCards(newCards);
         setMatchedPairs(matchedPairs + 1);
         
@@ -278,6 +288,14 @@ function App() {
         // Reset flipped cards
         setFlippedCount(0);
         setFlippedIndexes([]);
+        
+        // Remove justMatched flag after animation completes
+        setTimeout(() => {
+          const updatedCards = [...newCards];
+          updatedCards[firstIndex].justMatched = false;
+          updatedCards[secondIndex].justMatched = false;
+          setCards(updatedCards);
+        }, 1500);
       } else {
         // Not a match, flip back after delay
         setTimeout(() => {
