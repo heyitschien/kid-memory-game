@@ -1,6 +1,75 @@
-# Getting Started with Create React App
+# Card Matching Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A fun, responsive memory card matching game built with React and TypeScript. This game features custom images created by children using EverArt.
+
+## Features
+
+- Responsive design that works on both web and mobile devices (including iPhone)
+- Three difficulty levels: Easy, Medium, and Hard
+- Score tracking with moves counter and timer
+- Beautiful card flip animations
+- Game completion detection
+
+## How to Play
+
+1. Click on any card to flip it and reveal the image
+2. Try to find the matching pair by flipping another card
+3. If the cards match, they stay face up
+4. If they don't match, they flip back over
+5. Continue until all pairs are found
+6. Try to complete the game in as few moves as possible!
+
+## Difficulty Levels
+
+- **Easy**: 8 pairs (16 cards)
+- **Medium**: 16 pairs (32 cards)
+- **Hard**: 24 pairs (48 cards)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone this repository
+2. Navigate to the project directory
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+### Running the Development Server
+
+```bash
+npm start
+```
+
+This will start the development server at [http://localhost:3000](http://localhost:3000).
+
+### Building for Production
+
+```bash
+npm run build
+```
+
+## Technologies Used
+
+- React
+- TypeScript
+- Styled Components
+- CSS3 (with Flexbox and Grid)
+
+## Credits
+
+All card images were created by children using EverArt and organized into a game format.
+
+## License
+
+This project is licensed under the MIT License.
 
 ## Available Scripts
 
