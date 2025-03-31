@@ -7,6 +7,7 @@ interface CardType {
   imageUrl: string;
   isFlipped: boolean;
   isMatched: boolean;
+  justMatched?: boolean;
 }
 
 interface GameBoardProps {
@@ -133,6 +134,7 @@ const GameBoard: React.FC<GameBoardProps> = ({ cards, onCardClick, difficulty })
               isFlipped={card.isFlipped}
               isMatched={card.isMatched}
               onClick={onCardClick}
+              justMatched={card.justMatched}
             />
           </CardWrapper>
         ))}
