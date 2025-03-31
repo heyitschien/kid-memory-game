@@ -249,6 +249,9 @@ function App() {
     // Prevent flipping already matched or flipped cards
     if (cards[cardIndex].isMatched || cards[cardIndex].isFlipped) return;
     
+    // Play flip sound
+    playSound(SOUNDS.FLIP);
+    
     // Flip the card
     const newCards = [...cards];
     newCards[cardIndex].isFlipped = true;
