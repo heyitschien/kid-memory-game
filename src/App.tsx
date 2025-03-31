@@ -283,6 +283,8 @@ function App() {
         // Check if game is over
         if (matchedPairs + 1 === numPairs) {
           setGameOver(true);
+          // Play win sound when game is completed
+          playSound(SOUNDS.WIN);
         }
         
         // Reset flipped cards
